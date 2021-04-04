@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             val showResult : String = getString(R.string.result) + SPACE + result
             mainBinding.txvwResult.text = showResult
 
+            val hola:String = "Hola sapos"
+
             Log.d("Click", digit1 + SPACE + digit2 + SPACE + potencia + SPACE + tolerancia)
 
             Log.d("Result: ", result)
