@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">P3 Resistance Calculator</string>
+    <string name="title_main">Calculador de Resistencia</string>
+    <string name="result">"Resultado: </string>
+    <string name="calculate">Calcular</string>
+    <string name="digit_1">Digito 1:</string>
+    <string name="digit_2">Digito 2:</string>
+    <string name="digit_3">Digito 3:</string>
+    <string name="pot">Potencia:</string>
+    <string name="tol">Tolerancia:</string>
+    <string name="descript_table_resistor">Contiene la table de colores para las resitencias</string>
+
+    // Colors of table
+    <string name="black">Negro</string>
+    <string name="brown">Marrón</string>
+    <string name="red">Rojo</string>
+    <string name="orange">Naranja</string>
+    <string name="yellow">Amarillo</string>
+    <string name="green">Verde</string>
+    <string name="purple">Violeta</string>
+    <string name="blue">Azúl</string>
+    <string name="gray">Gris</string>
+    <string name="white">Blanco</string>
+    <string name="gold">Dorado</string>
+    <string name="silver">Plateado</string>
+
+
+    // Array para los spinner
+    <string-array name="color_list_1">
+        <item>Marrón</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azúl</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Blanco</item>
+    </string-array>
+
+    <string-array name="color_list_2">
+        <item>Negro</item>
+        <item>Marrón</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azúl</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Blanco</item>
+    </string-array>
+
+    <string-array name="pot_list">
+        <item>Negro</item>
+        <item>Marrón</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azúl</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Blanco</item>
+        <item>Dorado</item>
+        <item>Plateado</item>
+    </string-array>
+
+    <string-array name="tol_list">
+        <item>Marrón</item>
+        <item>Rojo</item>
+        <item>Verde</item>
+        <item>Azúl</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Dorado</item>
+        <item>Plateado</item>
+    </string-array>
+    
+</resources>
