@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">P3 Resistance Calculator</string>
+    <string name="app_name">Resistance Calculator</string>
     <string name="title_main">Calculador de Resistencia</string>
     <string name="result">"Resultado: </string>
     <string name="calculate">Calcular</string>

@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primary"
         android:padding="16dp"
         android:visibility="visible"
         tools:context=".MainActivity">
@@ -31,6 +32,7 @@
             android:layout_marginTop="4dp"
             android:text="@string/title_main"
             android:textAlignment="center"
+            android:textColor="@color/primary_text"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -42,8 +44,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/primary"
             android:baselineAligned="false"
             android:orientation="vertical"
+            android:padding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgvw_reistor_table">
@@ -57,7 +61,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/digit_1" />
+                    android:text="@string/digit_1"
+                    android:textColor="@color/primary_text" />
 
                 <Spinner
                     android:id="@+id/sp_digit_1"
@@ -76,7 +81,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/digit_2" />
+                    android:text="@string/digit_2"
+                    android:textColor="@color/primary_text" />
 
                 <Spinner
                     android:id="@+id/sp_digit_2"
@@ -94,7 +100,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/pot" />
+                    android:text="@string/pot"
+                    android:textColor="@color/primary_text" />
 
                 <Spinner
                     android:id="@+id/sp_mult"
@@ -113,12 +120,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/tol" />
+                    android:text="@string/tol"
+                    android:textColor="@color/primary_text" />
 
                 <Spinner
                     android:id="@+id/sp_tol"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -142,7 +150,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:backgroundTint="@color/ic_launcher_background"
             android:text="@string/calculate"
+            android:textColor="@color/primary_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.968"

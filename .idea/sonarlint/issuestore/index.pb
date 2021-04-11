@@ -16,8 +16,6 @@ P
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 T
 $.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1cba
-R
-"app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
 …
 Uapp/src/androidTest/java/com/eljeff/p3resistancecalculator/ExampleInstrumentedTest.kt,a\7\a7647402e90779d24d5e0d598094c3fa6e233e4b
 v
@@ -46,8 +44,6 @@ a
 1app/src/main/res/values/resistance_background.xml,9\5\95a5fc00cbe30d52d663c4a7409027d941d80b1a
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-R
-"app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
 X
 (app/src/main/res/values-night/themes.xml,8\c\8c3a6b96d9ffba496992e612d58227c19e6b9e65
 y
