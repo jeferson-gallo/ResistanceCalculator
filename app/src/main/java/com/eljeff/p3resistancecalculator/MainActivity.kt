@@ -12,187 +12,62 @@ class MainActivity : AppCompatActivity() {
     // Variable para declarar el ViewBinding
     private lateinit var mainBinding: ActivityMainBinding
 
-
-    //************* Variables para hacer respuesta ****************
-    private var item1: String = ""
-    private var item2: String = ""
-    private var pot: String = ""
-    private var tol: String = ""
-    private var dot: String = ""
-    private var init: String = ""
-    private var result: String = ""
-
-    //*************************************************************
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater) // initialize ViewBinding
         setContentView(mainBinding.root)
 
-        //setupCustomSpinner() //Pendiente no se hacer
+        setupCustomSpinner() //Pendiente no se hacer
 
         mainBinding.bttCalculate.setOnClickListener {
 
-            // Capturar los datos de los spiner
-            val digit1 = mainBinding.spDigit1.selectedItem.toString()
-            val digit2 = mainBinding.spDigit2.selectedItem.toString()
-            val potencia = mainBinding.spMult.selectedItem.toString()
-            val tolerancia = mainBinding.spTol.selectedItem.toString()
+            //************ Crear objeto para extraerle los atributos
+            val colorDataObject =   ColorsData //Make object
 
-            // Extraer valor del item
-            calculateDigit1(digit1)
-            calculateDigit2(digit2)
-            calculatePot(potencia)
-            calculateTol(tolerancia)
+            // *********** Capturar posiciones de los spinner
+            val posDigit1: Int = mainBinding.spDigit1.selectedItemPosition
+            val posDigit2: Int = mainBinding.spDigit2.selectedItemPosition
+            val posPot: Int = mainBinding.spMult.selectedItemPosition
+            val posTol: Int = mainBinding.spTol.selectedItemPosition
+
+            // *********** Recuperar los atributos segun la posición
+            val digit1 = colorDataObject.valuesDig1[posDigit1]
+            val digit2 = colorDataObject.valuesDig2[posDigit2]
+            val pot = colorDataObject.valuesPot[posPot]
+            val dotBool = colorDataObject.valuesDot[posPot]
+            val dot = if(dotBool) "." else ""
+            val init = if (posPot == 11) "0." else ""
+            val tol = colorDataObject.valuesTol[posTol]
 
             // Build result
-            result = init + item1 + dot + item2 + pot + tol
+            val result = init + digit1 + dot + digit2 + pot + tol
             val showResult : String = getString(R.string.result) + SPACE + result
             mainBinding.txvwResult.text = showResult
 
-            val hola:String = "Hola sapos"
 
-            Log.d("Click", digit1 + SPACE + digit2 + SPACE + potencia + SPACE + tolerancia)
+            //Log.d("Click", digit1 + SPACE + digit2 + SPACE + potencia + SPACE + tolerancia)
 
-            Log.d("Result: ", result)
+            //Log.d("Pos: ", posDigit1.toString())
 
         }
     }
 
-    private fun calculateTol(tolerancia: String){
+    private fun setupCustomSpinner() {
+        //Adaptador Digito 1
+        val adapterDig1 = ColorsArrayAdapter(this, ColorsData.listDig1!!)
+        //Adaptador Digito 2
+        val adapterDig2 = ColorsArrayAdapter(this, ColorsData.listDig2!!)
+        //Adaptador Potencia
+        val adapterPot = ColorsArrayAdapter(this, ColorsData.listPot!!)
+        //Adaptador Tolerancia
+        val adapterTol = ColorsArrayAdapter(this, ColorsData.listTol!!)
 
-        when (tolerancia) {
-            getString(R.string.brown) ->
-                tol = " (+-) 1 %"
-            getString(R.string.red) ->
-                tol = " (+-) 2 %"
-            getString(R.string.green) ->
-                tol = " (+-) 0.5 %"
-            getString(R.string.blue) ->
-                tol = " (+-) 0.25 %"
-            getString(R.string.purple) ->
-                tol = " (+-) 0.1 %"
-            getString(R.string.gray) ->
-                tol = " (+-) 0.05 %"
-            getString(R.string.gold) ->
-                tol = " (+-) 5 %"
-            getString(R.string.silver) ->
-                tol = " (+-) 10 %"
-        }
+        //Asignar los adaptadores al spinner
+        mainBinding.spDigit1.adapter = adapterDig1
+        mainBinding.spDigit2.adapter = adapterDig2
+        mainBinding.spMult.adapter = adapterPot
+        mainBinding.spTol.adapter = adapterTol
+
     }
 
-    private fun calculatePot(potencia: String){
-
-        when (potencia) {
-            getString(R.string.black) -> {
-                pot = " ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.brown) ->{
-                pot = "0 ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.red) -> {
-                pot = "K ohm"
-                dot = "."
-                init =  ""
-            }
-            getString(R.string.orange) ->{
-                pot = "K ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.yellow) ->{
-                pot = "0K ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.green) ->{
-                pot = "M ohm"
-                dot = "."
-                init =  ""
-            }
-            getString(R.string.blue) ->{
-                pot = "M ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.purple) ->{
-                pot = "0M ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.gray) ->{
-                pot = "G ohm"
-                dot = "."
-                init =  ""
-            }
-            getString(R.string.white) ->{
-                pot = "G ohm"
-                dot = ""
-                init =  ""
-            }
-            getString(R.string.gold) ->{
-                pot = " ohm"
-                dot = "."
-                init =  ""
-            }
-            getString(R.string.silver) ->{
-                pot = " ohm"
-                dot = ""
-                init =  "0."
-            }
-        }
-    }
-
-    private fun calculateDigit2(digit2: String){
-        when (digit2) {
-            getString(R.string.black) ->
-                item2 = "0"
-            getString(R.string.brown) ->
-                item2 = "1"
-            getString(R.string.red) ->
-                item2 = "2"
-            getString(R.string.orange) ->
-                item2 = "3"
-            getString(R.string.yellow) ->
-                item2 = "4"
-            getString(R.string.green) ->
-                item2 = "5"
-            getString(R.string.blue) ->
-                item2 = "6"
-            getString(R.string.purple) ->
-                item2 = "7"
-            getString(R.string.gray) ->
-                item2 = "8"
-            getString(R.string.white) ->
-                item2 = "9"
-        }
-    }
-
-    private fun calculateDigit1(digit1: String){
-        when (digit1) {
-            getString(R.string.brown) ->
-                item1 = "1"
-            getString(R.string.red) ->
-                item1 = "2"
-            getString(R.string.orange) ->
-                item1 = "3"
-            getString(R.string.yellow) ->
-                item1 = "4"
-            getString(R.string.green) ->
-                item1 = "5"
-            getString(R.string.blue) ->
-                item1 = "6"
-            getString(R.string.purple) ->
-                item1 = "7"
-            getString(R.string.gray) ->
-                item1 = "8"
-            getString(R.string.white) ->
-                item1 = "9"
-        }
-    }
 }

@@ -1,6 +1,2 @@
 
-Gkotlin:S1172%"(Remove these unused function parameters.(ñŒ¹8Ê¥¤‰/
-ykotlin:S117"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(ì¿¢Óıÿÿÿÿ8å ú£‰/
-Ukotlin:S1144%"6Remove this unused private "calculateResistor" method.(ñŒ¹8ãù­‰/
-tkotlin:S117"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(İ“•ø8ãîø£‰/
-Bkotlin:S125"Remove this commented out code.(àŒ‘†şÿÿÿÿ8ãù­‰/
+Mkotlin:S14816")Remove this unused "hola" local variable.(ÊÊĞşÿÿÿÿ8¤¿‘Ô‰/

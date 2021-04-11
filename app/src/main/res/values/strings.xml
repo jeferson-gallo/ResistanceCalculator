@@ -23,6 +23,7 @@
     <string name="white">Blanco</string>
     <string name="gold">Dorado</string>
     <string name="silver">Plateado</string>
+    <string name="black_1">Black</string>
 
 
     // Array para los spinner
