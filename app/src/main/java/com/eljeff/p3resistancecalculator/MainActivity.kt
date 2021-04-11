@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater) // initialize ViewBinding
         setContentView(mainBinding.root)
 
+        //Poner el icono en el action var
+        //supportActionBar!!.setDisplayShowHomeEnabled(true)
+
+
         setupCustomSpinner() //Pendiente no se hacer
 
         mainBinding.bttCalculate.setOnClickListener {
