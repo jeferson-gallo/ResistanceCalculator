@@ -2,6 +2,19 @@ package com.eljeff.p3resistancecalculator
 
 data class ColorDigits(val image: Int, val name: String)
 
+private const val brown = "Marrón"
+private const val black = "Negro"
+private const val red = "Rojo"
+private const val orange = "Naranja"
+private const val yellow = "Amarillo"
+private const val green = "Verde"
+private const val blue = "Azúl"
+private const val purple = "Violeta"
+private const val gray = "Gris"
+private const val white = "Blanco"
+private const val gold = "Dorado"
+private const val silver = "Plateado"
+
 object ColorsData{
 
     //***************************** Atributos del spinner Digito 1 *********************************
@@ -18,15 +31,15 @@ object ColorsData{
     )
 
     private val namesDig1 = arrayOf(
-        "Marrón",
-        "Rojo",
-        "Naranja",
-        "Amarillo",
-        "Verde",
-        "Azúl",
-        "Violeta",
-        "Gris",
-        "Blanco"
+        brown,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        purple,
+        gray,
+        white
     )
     val valuesDig1 = arrayOf(
         "1",
@@ -72,16 +85,16 @@ object ColorsData{
     )
 
     private val namesDig2 = arrayOf(
-        "Negro",
-        "Marrón",
-        "Rojo",
-        "Naranja",
-        "Amarillo",
-        "Verde",
-        "Azúl",
-        "Violeta",
-        "Gris",
-        "Blanco"
+        black,
+        brown,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        purple,
+        gray,
+        white
     )
     val valuesDig2 = arrayOf(
         "0",
@@ -130,18 +143,18 @@ object ColorsData{
     )
 
     private val namesPot = arrayOf(
-        "Negro",
-        "Marrón",
-        "Rojo",
-        "Naranja",
-        "Amarillo",
-        "Verde",
-        "Azúl",
-        "Violeta",
-        "Gris",
-        "Blanco",
-        "Dorado",
-        "Plateado"
+        black,
+        brown,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        purple,
+        gray,
+        white,
+        gold,
+        silver
     )
     val valuesPot = arrayOf(
         " ohm",
@@ -202,14 +215,14 @@ object ColorsData{
     )
 
     private val namesTol = arrayOf(
-        "Marrón",
-        "Rojo",
-        "Verde",
-        "Azúl",
-        "Violeta",
-        "Gris",
-        "Dorado",
-        "Plateado"
+        brown,
+        red,
+        green,
+        blue,
+        purple,
+        gray,
+        gold,
+        silver
     )
     val valuesTol = arrayOf(
         " (+-) 1 %",

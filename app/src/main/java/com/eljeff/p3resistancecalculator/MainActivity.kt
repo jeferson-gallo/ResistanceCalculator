@@ -1,12 +1,13 @@
 package com.eljeff.p3resistancecalculator
 
 import android.os.Bundle
-import android.util.Log
+import android.text.Html
 import androidx.appcompat.app.AppCompatActivity
 import com.eljeff.p3resistancecalculator.databinding.ActivityMainBinding
 
 private const val SPACE = " "
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     // Variable para declarar el ViewBinding
@@ -17,12 +18,19 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater) // initialize ViewBinding
         setContentView(mainBinding.root)
 
+        //Poner el icono en el action var
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.setIcon(R.mipmap.ic_launcher)
+        supportActionBar!!.title = Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>")
+
+        //actionBar!!.setTitle(ColorDrawable(Color.parseColor(getResources().getColor(R.color.primary_text))))
+
         setupCustomSpinner() //Pendiente no se hacer
 
         mainBinding.bttCalculate.setOnClickListener {
 
             //************ Crear objeto para extraerle los atributos
-            val colorDataObject =   ColorsData //Make object
+            val colorDataObject = ColorsData //Make object
 
             // *********** Capturar posiciones de los spinner
             val posDigit1: Int = mainBinding.spDigit1.selectedItemPosition
@@ -35,13 +43,13 @@ class MainActivity : AppCompatActivity() {
             val digit2 = colorDataObject.valuesDig2[posDigit2]
             val pot = colorDataObject.valuesPot[posPot]
             val dotBool = colorDataObject.valuesDot[posPot]
-            val dot = if(dotBool) "." else ""
+            val dot = if (dotBool) "." else ""
             val init = if (posPot == 11) "0." else ""
             val tol = colorDataObject.valuesTol[posTol]
 
             // Build result
             val result = init + digit1 + dot + digit2 + pot + tol
-            val showResult : String = getString(R.string.result) + SPACE + result
+            val showResult: String = getString(R.string.result) + SPACE + result
             mainBinding.txvwResult.text = showResult
 
 
